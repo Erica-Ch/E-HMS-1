@@ -11,7 +11,7 @@ import za.ac.cput.util.Helper;
 import java.time.LocalDate;
 
 public class DiagnosisFactory {
-    public static Diagnosis createDiagnosis(String diagnosisName, String diagnosisType, LocalDate date) {
+    public static Diagnosis createDiagnosis(Long id, String diagnosisName, String diagnosisType, LocalDate date) {
         Long diagnosisId = Helper.generateId();
 
         return new Diagnosis.Builder()

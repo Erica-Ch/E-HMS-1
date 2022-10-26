@@ -1,10 +1,23 @@
-package za.ac.cput.entity.contact;
-
 /*
 CustomerDetails.java
 Author: Ngonidzaishe Erica Chipato- 218327315
 Date: 06 April 2022
+Modified: September 2022
  */
+
+package za.ac.cput.entity.contact;
+import lombok.*;
+import javax.persistence.*;
+
+@Entity
+@Table(name ="contactdetails")
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Getter
+@Setter
+@ToString
+
 public class ContactDetails {
 
     private Long contactId;
@@ -16,6 +29,7 @@ public class ContactDetails {
 
     }
 
+    @Id
     public Long getContactId() {
         return contactId;
     }
@@ -23,6 +37,7 @@ public class ContactDetails {
     public void setContactId(Long contactId) {
         this.contactId = contactId;
     }
+
 
     public String getPhoneNumber() {
         return phoneNumber;

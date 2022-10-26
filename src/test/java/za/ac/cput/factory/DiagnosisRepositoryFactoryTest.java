@@ -12,15 +12,15 @@ class DiagnosisRepositoryFactoryTest {
 
     @Test
     public void addDiagnosis() {
-        Diagnosis dia1 = DiagnosisFactory.createDiagnosis("Arthritis", "X-Ray", LocalDate.of(2022, 7, 25));
+        Diagnosis dia1 = DiagnosisFactory.createDiagnosis(id, "Arthritis", "X-Ray", LocalDate.of(2022, 7, 25));
         assertNotNull(dia1);
         System.out.println("Diagnosis created");
     }
 
     @Test
     void testEquality() {
-        Diagnosis dia1 = DiagnosisFactory.createDiagnosis("Tumor", "MRI SCAN", LocalDate.of(2022, 6, 17));
-        Diagnosis dia2 = DiagnosisFactory.createDiagnosis("Heart disease", "PET SCAN", LocalDate.of(2022, 5, 7));
+        Diagnosis dia1 = DiagnosisFactory.createDiagnosis(id, "Tumor", "MRI SCAN", LocalDate.of(2022, 6, 17));
+        Diagnosis dia2 = DiagnosisFactory.createDiagnosis(id, "Heart disease", "PET SCAN", LocalDate.of(2022, 5, 7));
         Diagnosis dia3 = dia1;
 
         assertNotEquals(dia1, dia2);
@@ -28,8 +28,8 @@ class DiagnosisRepositoryFactoryTest {
 
     @Test
     void testIdentity() {
-        Diagnosis dia1 = DiagnosisFactory.createDiagnosis("Tumor", "MRI SCAN", LocalDate.of(2022, 6, 17));
-        Diagnosis dia2 = DiagnosisFactory.createDiagnosis("Heart disease", "PET SCAN", LocalDate.of(2022, 5, 7));
+        Diagnosis dia1 = DiagnosisFactory.createDiagnosis(id, "Tumor", "MRI SCAN", LocalDate.of(2022, 6, 17));
+        Diagnosis dia2 = DiagnosisFactory.createDiagnosis(id, "Heart disease", "PET SCAN", LocalDate.of(2022, 5, 7));
         Diagnosis dia3 = dia1;
 
         assertSame(dia1, dia3);

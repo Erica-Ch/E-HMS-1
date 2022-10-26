@@ -16,7 +16,7 @@ class ContactDetailsFactoryTest {
 
     @Test
     public void addContactDetails() {
-        ContactDetails contactdetails = ContactDetailsFactory.createContactDetails("0784568952");
+        ContactDetails contactdetails = ContactDetailsFactory.createContactDetails(id, "0784568952");
         assertNotNull(contactdetails);
     }
 }

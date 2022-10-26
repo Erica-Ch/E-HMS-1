@@ -11,7 +11,7 @@ import za.ac.cput.util.Helper;
 
 public class ContactDetailsFactory {
 
-    public static ContactDetails createContactDetails(String phone) {
+    public static ContactDetails createContactDetails(Long id, String phone) {
         Long contactId = Helper.generateId();
 
         return new ContactDetails.Builder()

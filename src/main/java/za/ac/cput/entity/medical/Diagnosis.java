@@ -1,29 +1,40 @@
-package za.ac.cput.entity.medical;
-
-
-import java.time.LocalDate;
-
-
 /*
 Diagnosis.java
 Author: Ngonidzaishe Erica Chipato- 218327315
 Date: 07 April 2022
  */
+
+package za.ac.cput.entity.medical;
+import lombok.*;
+import javax.persistence.*;
+import java.time.LocalDate;
+
+@Entity
+@Table(name ="diagnosis")
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Getter
+@Setter
+@ToString
+
+
 public class Diagnosis {
 
     private Long diagnosisId;
     private String diagnosisName;
     private String diagnosisType;
-    private LocalDate date;
+    private LocalDate diagnosisDate;
 
     private Diagnosis(Diagnosis.Builder builder) {
         this.diagnosisId = builder.diagnosisId;
         this.diagnosisName = builder.diagnosisName;
         this.diagnosisType = builder.diagnosisType;
-        this.date = builder.date;
+        this.diagnosisDate = builder.diagnosisDate;
 
     }
 
+    @Id
     public Long getDiagnosisId() {
         return diagnosisId;
     }
@@ -48,12 +59,12 @@ public class Diagnosis {
         this.diagnosisType = diagnosisType;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public LocalDate getDiagnosisDate() {
+        return diagnosisDate;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setDate(LocalDate diagnosisDate) {
+        this.diagnosisDate = diagnosisDate;
     }
 
     @Override
@@ -62,7 +73,7 @@ public class Diagnosis {
                 "diagnosisId=" + diagnosisId +
                 ", diagnosisName=" + diagnosisName +
                 ", diagnosisType=" + diagnosisType +
-                ", date='" + date + '\'' +
+                ", date='" + diagnosisDate + '\'' +
                 '}';
     }
 
@@ -70,7 +81,7 @@ public class Diagnosis {
         private Long diagnosisId;
         private String diagnosisName;
         private String diagnosisType;
-        private LocalDate date;
+        private LocalDate diagnosisDate;
 
 
         public Diagnosis.Builder diagnosisId(Long diagnosisId) {
@@ -88,8 +99,8 @@ public class Diagnosis {
             return this;
         }
 
-        public Diagnosis.Builder date(LocalDate date) {
-            this.date = date;
+        public Diagnosis.Builder date(LocalDate diagnosisDate) {
+            this.diagnosisDate = diagnosisDate;
             return this;
         }
 
@@ -98,7 +109,7 @@ public class Diagnosis {
             this.diagnosisId = diagnosis.diagnosisId;
             this.diagnosisName = diagnosis.diagnosisName;
             this.diagnosisType = diagnosis.diagnosisType;
-            this.date = diagnosis.date;
+            this.diagnosisDate = diagnosis.diagnosisDate;
 
             return this;
         }
